@@ -1,0 +1,43 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 5,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "aCode": "AREA",
+        "aCodeName": "지역",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "aCode": "EVENT",
+        "aCodeName": "이벤트",
+        "useYn": "N"
+      },
+      {
+        "rNum": 3,
+        "aCode": "DEVICE",
+        "aCodeName": "디바이스",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 4,
+        "aCode": "EQUIP",
+        "aCodeName": "중장비",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 5,
+        "aCode": "WORKER",
+        "aCodeName": "근로자",
+        "useYn": "Y"
+      }
+    ]
+  }
+}

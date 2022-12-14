@@ -1,0 +1,31 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 2,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "CRANE",
+        "cCodeName": "기중기",
+        "aCode": "EQUIP",
+        "bCode": "UNLOAD",
+        "danRange": 3,
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "TOWER_CRANE",
+        "cCodeName": "타워크레인",
+        "aCode": "EQUIP",
+        "bCode": "UNLOAD",
+        "danRange": 3,
+        "useYn": "N"
+      }
+    ]
+  }
+}

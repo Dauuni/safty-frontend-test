@@ -1,0 +1,35 @@
+.icon {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  opacity: 1;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &__menu {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 18px;
+    padding-right: 5px;
+  }
+  &__close--white {
+    width: 38px;
+    height: 38px;
+    background: url("~/assets/img/icon-close_w.png") no-repeat center center /
+      13px;
+  }
+}
+
+.useY {
+  color: green;
+}
+
+.useN {
+  color: red;
+}

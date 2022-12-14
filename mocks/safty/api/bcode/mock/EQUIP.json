@@ -1,0 +1,48 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 5,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "bCode": "CIVIL",
+        "bCodeName": "토목장비",
+        "aCode": "EQUIP",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "bCode": "CARRY",
+        "bCodeName": "운반장비",
+        "aCode": "EQUIP",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 3,
+        "bCode": "PACK",
+        "bCodeName": "포장장비",
+        "aCode": "EQUIP",
+        "useYn": "Y"
+      },
+            {
+        "rNum": 4,
+        "bCode": "UNLOAD",
+        "bCodeName": "하역용장비",
+        "aCode": "EQUIP",
+        "useYn": "Y"
+      },
+            {
+        "rNum": 5,
+        "bCode": "SUBSTRUC",
+        "bCodeName": "기초공사용",
+        "aCode": "EQUIP",
+        "useYn": "N"
+      }
+    ]
+  }
+}

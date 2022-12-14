@@ -1,0 +1,450 @@
+@import "@/assets/scss/icon";
+
+/* ==== Hide ==== */
+.hide {
+  display: inline-block;
+  overflow: hidden; // content
+  position: relative;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+/* ==== Layout ==== */
+#__nuxt {
+  @include body(font-sm);
+  overflow: hidden;
+  height: 100vh;
+  line-height: normal;
+  background-color: $blue-gray-80;
+  color: $white-100;
+  font-weight: 400;
+  font-size: 14px;
+
+  .frameworkWrap {
+    @apply flex flex-col h-screen;
+
+    /* ==== Header ==== */
+    .header {
+      @apply flex justify-between items-center;
+      min-height: 60px;
+      min-width: 600px;
+      padding-left: 10px;
+      background-color: $blue-gray-80;
+      color: $white-100;
+      letter-spacing: normal; // 문자 가로 간격
+      border-bottom: 1px solid;
+      border-color: $gray-50;
+      font-size: 20px;
+
+      // Logout Icon
+      &__logout {
+        padding-left: 10px;
+      }
+    }
+
+    /* ==== SideBar ==== */
+    .Sidebar {
+      @apply flex flex-none;
+      overflow: auto;
+      width: 60px;
+      height: 100vh;
+      background-color: $blue-gray-80;
+      color: $white-100;
+      border-right: 1px solid $gray-50;
+      letter-spacing: normal;
+      border-right: 1px solid;
+      border-color: $gray-50;
+
+      &__list {
+        overflow-y: auto;
+        width: 100%;
+        &--menu {
+          padding-top: 12px;
+          text-align: center;
+        }
+      }
+
+      &__1depth {
+        cursor: pointer;
+      }
+      &__2depth {
+        cursor: pointer;
+      }
+      &__2depth__menu {
+        cursor: pointer;
+      }
+    }
+
+    /* ==== Contour ==== */
+    .contour {
+      border-top: 1px solid $blue-gray-100;
+    }
+
+    /* ==== Content ==== */
+    .content__wrap {
+      @apply flex flex-col;
+      overflow-y: auto;
+      height: calc(100vh - 40px);
+      width: 100%;
+
+      .content {
+        @apply flex-1;
+        width: 1420px;
+        margin: 0 auto;
+        padding: 20px 0px;
+
+        &__subtitle {
+          @include title(title-sm);
+
+          &__popup {
+            font-weight: 500;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            line-height: 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    /* ==== Search Form ==== */
+    .search-form {
+      @apply flex items-center;
+
+      border: transparent;
+
+      &__label {
+        margin-bottom: 4px;
+        color: $white-100;
+        font-size: 12px;
+      }
+
+      &__input {
+        @apply flex;
+
+        height: 32px;
+        border: 1px solid $gray-50;
+        background: $white-100;
+        transition: $transition;
+        color: black;
+
+        input {
+          max-width: 120px;
+          padding: 0 10px;
+
+          font-size: 14px;
+
+          &::placeholder {
+            color: $gray-60;
+          }
+
+          &:focus {
+            outline: transparent;
+
+            &::-webkit-input-placeholder {
+              background: none;
+              color: transparent;
+            }
+          }
+
+          &:disabled {
+            background-color: $gray-40;
+          }
+        }
+
+        &:focus-within {
+          border-color: $gray-60;
+        }
+      }
+
+      button {
+        &:disabled {
+          cursor: not-allowed;
+        }
+      }
+
+      button[type="button"] {
+        &:disabled {
+          background-color: $gray-40;
+          color: $gray-60;
+        }
+      }
+    }
+  }
+
+  /* ==== button ==== */
+  .btn {
+    &:focus {
+      outline: transparent;
+    }
+
+    &--lg {
+      @include btn-size($height: 50px, $fontSize: 16px);
+      min-width: 100px;
+
+      &.btn__icon {
+        padding: 0 20px;
+      }
+    }
+
+    &--md {
+      @include btn-size($height: 40px, $fontSize: 14px);
+
+      &.btn__icon {
+        padding: 0 12px;
+      }
+    }
+
+    &--sm {
+      @include btn-size($height: 32px, $fontSize: 14px);
+
+      &.btn__icon {
+        padding: 0 10px;
+      }
+    }
+
+    &--line {
+      @include btn-line();
+    }
+
+    &__create {
+      position: relative;
+
+      button {
+        position: absolute;
+        margin-left: 110px;
+
+        &:disabled {
+          color: $gray-40;
+        }
+      }
+    }
+  }
+
+  /* ==== block ==== */
+  .block {
+    text-align: center;
+
+    &__code {
+      background-color: $blue-gray-100;
+      width: 300px;
+      height: 30px;
+      margin: 0px 80px;
+    }
+
+    &__name {
+      display: inline-block;
+      color: $white-100;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 3px 0px;
+    }
+  }
+}
+
+/* ==== vue-select ==== */
+.v-select {
+  @include body(font-sm);
+  flex: 1 1 0%;
+
+  .vs__dropdown-toggle {
+    padding: 0;
+    max-width: 100px;
+    height: 32px;
+    border: 1px solid $gray-50;
+    background-color: $white-100;
+    transition: $transition;
+    cursor: pointer;
+
+    .vs__selected-options {
+      padding-left: 6px;
+      cursor: pointer;
+
+      .vs__selected {
+        position: unset;
+        margin: 0;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+      }
+      input {
+        &::placeholder {
+          color: $gray-60;
+        }
+      }
+      .vs__search {
+        padding: 0;
+        margin: 2px 0 0;
+      }
+    }
+
+    .vs__actions {
+      position: relative;
+      transform: scale(0.75);
+      left: 8px;
+
+      .vs__clear {
+        display: none;
+      }
+
+      .vs__open-indicator {
+        fill: transparent;
+      }
+    }
+  }
+
+  // select box close
+  &.vs--single {
+    .vs__dropdown-toggle {
+      border: 1px solid $gray-50;
+      border-radius: 0;
+      cursor: pointer;
+    }
+
+    .vs__actions {
+      &::before {
+        content: "";
+        width: 13px;
+        height: 8px;
+        background: url("~assets/img/icon-arrow_down.png") no-repeat center
+          center/16px;
+      }
+    }
+  }
+
+  &.vs--unsearchable {
+    min-width: 100px;
+  }
+
+  // select box open
+  &.vs--open {
+    box-shadow: $boxShadow;
+
+    .vs__dropdown-toggle {
+      border: 1px solid $blue-gray-100 !important;
+      border-radius: 0;
+      cursor: pointer;
+    }
+
+    .vs__actions {
+      &::before {
+        content: "";
+        width: 13px;
+        height: 8px;
+        background: url("~assets/img/icon-arrow_up.png") no-repeat center
+          center/16px;
+      }
+    }
+  }
+
+  // option
+  .vs__dropdown-menu {
+    top: calc(100% - 5px);
+    min-width: 100%;
+    padding-left: 0;
+    border: 1px solid $blue-gray-100;
+    border-top: none;
+    border-radius: 0;
+    box-shadow: $boxShadow;
+
+    .vs__dropdown-option {
+      padding: 6px 10px !important;
+      color: $gray-90;
+
+      &:hover,
+      &:focus {
+        background: $gray-20;
+      }
+
+      &--highlight {
+        background: transparent;
+      }
+    }
+  }
+
+  // disabled
+  &.vs--disabled {
+    .vs__dropdown-toggle {
+      background-color: $gray-40;
+      cursor: not-allowed;
+
+      .vs__selected-options {
+        cursor: not-allowed;
+        .vs__selected,
+        .vs__search {
+          color: $gray-60;
+          background-color: $gray-40;
+          cursor: not-allowed;
+        }
+      }
+
+      .vs__actions {
+        position: relative;
+        transform: scale(0.75);
+
+        &::before {
+          background-color: $gray-40;
+        }
+
+        .vs__open-indicator {
+          fill: transparent;
+          background-color: $gray-40;
+        }
+      }
+    }
+  }
+}
+
+/* ==== Grid ==== */
+.grid {
+  @include grid();
+}
+/* ====Grid 가로==== */
+.table {
+  @include table();
+}
+
+/* ==== Form ==== */
+.form {
+  width: 100%;
+  height: 100%;
+
+  &__list {
+    @apply flex items-center;
+    padding: 0 0 20px;
+  }
+
+  &__label {
+    @include body(font-sm);
+    @include label();
+    color: $white-100;
+    padding: 0px 10px;
+
+    &--required {
+      &::after {
+        content: "*";
+        padding-left: 5px;
+        color: red;
+      }
+    }
+  }
+
+  &__input {
+    @include input();
+    @include body(font-sm);
+
+    &:disabled {
+      background-color: $gray-40;
+    }
+  }
+
+  &__radio {
+    @include body(font-sm);
+    @include radio();
+  }
+}

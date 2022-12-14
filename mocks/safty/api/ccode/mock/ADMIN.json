@@ -1,0 +1,37 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 2,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "TEAM_LEADER",
+        "cCodeName": "팀장",
+        "aCode": "WORKER",
+        "bCode": "ADMIN",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "PLANT_MNG",
+        "cCodeName": "공장장",
+        "aCode": "WORKER",
+        "bCode": "ADMIN",
+        "useYn": "N"
+      },
+      {
+        "rNum": 3,
+        "cCode": "ADMIN",
+        "cCodeName": "일반 관리자",
+        "aCode": "WORKER",
+        "bCode": "ADMIN",
+        "useYn": "Y"
+      }
+    ]
+  }
+}

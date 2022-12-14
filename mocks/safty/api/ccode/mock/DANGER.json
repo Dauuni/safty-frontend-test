@@ -1,0 +1,61 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 6,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "HANDRAIL",
+        "cCodeName": "난간",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "CLIFF",
+        "cCodeName": "낭떠러지",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 3,
+        "cCode": "LADDER",
+        "cCodeName": "사다리",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 4,
+        "cCode": "PIPE_SUP",
+        "cCodeName": "동바리",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "N"
+      },
+      {
+        "rNum": 5,
+        "cCode": "FENCE",
+        "cCodeName": "담장",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 6,
+        "cCode": "SLAB",
+        "cCodeName": "슬래브",
+        "aCode": "AREA",
+        "bCode": "DANGER",
+        "useYn": "Y"
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 4,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "BULLDOZER",
+        "cCodeName": "불도저",
+        "aCode": "EQUIP",
+        "bCode": "CIVIL",
+        "danRange": 10,
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "EXCAVATOR",
+        "cCodeName": "굴착기",
+        "aCode": "EQUIP",
+        "bCode": "CIVIL",
+        "danRange": 5,
+        "useYn": "Y"
+      },
+      {
+        "rNum": 3,
+        "cCode": "SCRAPER",
+        "cCodeName": "스크레이퍼",
+        "aCode": "EQUIP",
+        "bCode": "CIVIL",
+        "danRange": 10,
+        "useYn": "Y"
+      },
+      {
+        "rNum": 4,
+        "cCode": "LOADER",
+        "cCodeName": "로더",
+        "aCode": "EQUIP",
+        "bCode": "CIVIL",
+        "danRange": 10,
+        "useYn": "Y"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 2,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "EMPLIYEE",
+        "cCodeName": "사원",
+        "aCode": "WORKER",
+        "bCode": "NORMAL",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "GROUP_LEADER",
+        "cCodeName": "조장",
+        "aCode": "WORKER",
+        "bCode": "NORMAL",
+        "useYn": "Y"
+      }
+    ]
+  }
+}

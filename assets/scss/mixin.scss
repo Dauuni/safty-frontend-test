@@ -1,0 +1,407 @@
+/* ==== Body ==== */
+@mixin body($fontSize) {
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #424242;
+
+  @if $fontSize==font-xl {
+    line-height: 30px;
+    font-size: 22px;
+  } @else if $fontSize==font-lg {
+    line-height: 26px;
+    font-size: 18px;
+  } @else if $fontSize==font-md {
+    line-height: 24px;
+    font-size: 16px;
+  } @else if $fontSize==font-sm {
+    line-height: 22px;
+    font-size: 14px;
+  }
+}
+
+/* ==== Font ==== */
+@mixin title($titleSize) {
+  font-weight: 500;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+
+  @if $titleSize==title-lg {
+    line-height: 50px;
+    font-size: 48px;
+  } @else if $titleSize==title-md {
+    line-height: 40px;
+    font-size: 34px;
+  } @else if $titleSize==title-sm {
+    line-height: 32px;
+    font-size: 20px;
+  }
+}
+
+/* ==== Button ====*/
+@mixin btn-size($minWidth: 80px, $height, $padding: 10px, $fontSize) {
+  width: auto;
+  min-width: $minWidth;
+  height: $height;
+  line-height: $height;
+  padding: 0 12px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: $fontSize;
+  text-align: center;
+  box-sizing: border-box;
+  transition: $transition;
+  cursor: pointer;
+
+  &:focus {
+    outline: transparent;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &.w-full {
+    width: 100%;
+  }
+}
+
+@mixin btn-line($bdColor: $gray-40, $textColor: $gray-70) {
+  border-color: $bdColor;
+  background-color: $white-100;
+  color: $textColor;
+
+  &:hover,
+  &:active,
+  &.active {
+    background-color: darken($white-100, 5%);
+  }
+
+  &:disabled {
+    border-color: $gray-40;
+    background-color: $gray-20;
+    color: $gray-60;
+  }
+}
+
+/* ==== Grid ==== */
+@mixin grid {
+  display: flex;
+  flex-flow: column;
+
+  .grid__wrap {
+    position: relative;
+    min-height: 400px;
+  }
+  .order--grid__wrap {
+    position: relative;
+  }
+  .grid__base {
+    table-layout: fixed;
+    width: 100%;
+    border-bottom: 2px solid $blue-gray-100;
+    border-collapse: collapse;
+    border-spacing: 0;
+    // box-shadow: $boxShadow;
+    text-align: center;
+    @include body(font-sm);
+
+    caption {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    thead {
+      background: $white-100;
+
+      th {
+        height: 40px;
+        line-height: initial;
+        padding: 8px 0;
+        background-color: $blue-gray-100;
+        color: $white-100;
+        font-weight: bold;
+        text-align: center;
+        word-break: break-all;
+        cursor: default;
+
+        &.cursor-pointer {
+          cursor: pointer;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 2px solid $blue-gray-100;
+        box-sizing: border-box;
+
+        td {
+          height: $gridHeight;
+          padding: 8px 10px;
+          line-height: initial;
+          color: $white-100;
+          word-break: break-all;
+
+          //말줄임표
+          &.omission {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+          }
+
+          .form__input {
+            border-color: $gray-30;
+          }
+
+          .v-select {
+            .vs__dropdown-toggle {
+              border: 1px solid $gray-30;
+            }
+          }
+
+          &.cursor-pointer {
+            cursor: pointer;
+          }
+
+          .v-select,
+          .form__input {
+            font-size: 12px;
+
+            &:read-only {
+              font-size: 14px;
+            }
+          }
+
+          &.no-hover {
+            pointer-events: none;
+
+            button {
+              pointer-events: visible;
+
+              &:hover {
+                color: $blue-gray-60;
+              }
+
+              &.button--active {
+                color: $blue-gray-60;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          td {
+            background-color: $gray-90;
+            transition: $transition;
+            cursor: pointer;
+          }
+        }
+
+        &.grid--active {
+          td {
+            transition: $transition;
+            cursor: pointer;
+          }
+        }
+
+        &.cursor-default {
+          &:hover,
+          &.grid--active {
+            td {
+              cursor: default;
+            }
+          }
+        }
+
+        &:last-child {
+          border: none;
+        }
+
+        &.no-data {
+          td {
+            color: $white-100;
+            cursor: default;
+
+            &:hover,
+            .grid--active {
+              color: $white-100;
+              background-color: $blue-gray-80;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==== Table ==== */
+@mixin table {
+  width: 100%;
+  tbody {
+    border-top: 1px solid $gray-40;
+
+    tr {
+      background: $white-100;
+      border-bottom: 1px solid $gray-30;
+      td {
+        line-height: $gridHeight;
+        padding: 0 10px;
+        text-align: center;
+        &:first-child {
+          background: $blue-gray-100;
+        }
+        .form__input {
+          border-color: $gray-30;
+          &:read-only {
+            font-size: 14px;
+          }
+        }
+      }
+      &:last-child {
+        border-bottom: 1px solid $gray-40;
+      }
+    }
+  }
+}
+
+/* ==== Form ==== */
+@mixin label($width: 140px, $height: 40px) {
+  width: auto;
+  min-width: $width;
+  line-height: $height;
+  color: $gray-80;
+  position: relative;
+}
+
+/* ==== Input ==== */
+@mixin input($borderColor: $gray-40, $width: 150px, $height: 40px) {
+  width: 100%;
+  min-width: $width;
+  height: $height;
+  padding: 0 15px;
+  border: 1px solid $borderColor;
+  transition: $transition;
+
+  &::placeholder {
+    color: $gray-60;
+  }
+
+  &:focus {
+    border: 1px solid $primary;
+    outline: transparent;
+
+    /* focus일때 placeholder 사라지는 스타일 */
+    &::-webkit-input-placeholder {
+      background: none;
+      color: transparent;
+    }
+  }
+
+  &:read-only {
+    padding: 0;
+    border-color: transparent;
+    background-color: transparent;
+    color: $gray-90;
+    cursor: default;
+
+    &::placeholder {
+      color: $gray-60;
+    }
+
+    &:focus {
+      border: 1px solid transparent;
+      outline: transparent;
+
+      /* readonly상태에서 focus일때 placeholder 사라지지 않도록 하는 스타일 */
+      &::-webkit-input-placeholder {
+        color: $gray-90;
+      }
+
+      &::placeholder {
+        color: $gray-60;
+      }
+    }
+  }
+
+  &:disabled {
+    padding: 0 15px;
+    border-color: $gray-40;
+    background-color: $gray-20;
+    color: $gray-60;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: $gray-60;
+    }
+  }
+}
+
+/* ==== Radio ==== */
+@mixin radio($size: 15px, $justify: flex-start) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  line-height: initial;
+  color: $white-100;
+
+  input[type="radio"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size;
+    height: $size;
+    border: 1px solid $white-100;
+    border-radius: 50%;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: $transition;
+
+    &:checked {
+      position: relative;
+      border-color: $white-100;
+
+      &:before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $white-100;
+      }
+    }
+
+    &:disabled {
+      border-color: $gray-60;
+      cursor: not-allowed;
+
+      & + label {
+        color: $gray-60;
+        cursor: not-allowed;
+      }
+
+      &:checked {
+        &:before {
+          background-color: $gray-40;
+        }
+      }
+    }
+  }
+
+  label {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}

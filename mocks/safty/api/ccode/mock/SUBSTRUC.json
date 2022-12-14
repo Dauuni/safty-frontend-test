@@ -1,0 +1,31 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 2,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "BORING_MCN",
+        "cCodeName": "천공기",
+        "aCode": "EQUIP",
+        "bCode": "SUBSTRUC",
+        "danRange": 10,
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "PILE_DRIVE",
+        "cCodeName": "항타기",
+        "aCode": "EQUIP",
+        "bCode": "SUBSTRUC",
+        "danRange":10,
+        "useYn": "N"
+      }
+    ]
+  }
+}

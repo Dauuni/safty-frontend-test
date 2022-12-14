@@ -1,0 +1,21 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 1,
+    "totalCount": 1,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "WEAR",
+        "cCodeName": "웨어러블",
+        "aCode": "DEVICE",
+        "bCode": "INSTALL",
+        "useYn": "Y"
+      }
+    ]
+  }
+}

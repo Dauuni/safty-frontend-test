@@ -1,0 +1,6 @@
+{
+  "input": "mocks",
+  "target": "es6",
+  "outputExt": "js",
+  "outputFilename": "com-mock.js"
+}

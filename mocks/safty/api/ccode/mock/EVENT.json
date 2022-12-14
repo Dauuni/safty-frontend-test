@@ -1,0 +1,109 @@
+{
+  "httpStatusCode": 200,
+  "code": "20000000",
+  "message": "정상 처리 되었습니다.",
+  "body": {
+    "totalPage": 2,
+    "totalCount": 12,
+    "currentPage": 1,
+    "limit": 10,
+    "data": [
+      {
+        "rNum": 1,
+        "cCode": "FIRE",
+        "cCodeName": "화재",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 2,
+        "cCode": "EMPLO",
+        "cCodeName": "폭발",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 3,
+        "cCode": "WORKER_FALL",
+        "cCodeName": "낙상",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 4,
+        "cCode": "THING_FALL",
+        "cCodeName": "떨어짐",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "N"
+      },
+      {
+        "rNum": 5,
+        "cCode": "CRASH",
+        "cCodeName": "충돌",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "N"
+      },
+      {
+        "rNum": 6,
+        "cCode": "LONG_FALL_DOWN",
+        "cCodeName": "쓰러짐",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 7,
+        "cCode": "EARTHQUAKE",
+        "cCodeName": "지진",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 8,
+        "cCode": "HEAT_WAVE",
+        "cCodeName": "폭염",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 9,
+        "cCode": "DRY",
+        "cCodeName": "건조",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 10,
+        "cCode": "GAS",
+        "cCodeName": "유해가스",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 11,
+        "cCode": "INC_ILLU",
+        "cCodeName": "조도상승",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      },
+      {
+        "rNum": 12,
+        "cCode": "DEC_ILLU",
+        "cCodeName": "조도하락",
+        "aCode": "EVENT",
+        "bCode": "EVENT",
+        "useYn": "Y"
+      }
+    ]
+  }
+}
