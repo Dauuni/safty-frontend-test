@@ -91,6 +91,18 @@
 
   .grid__wrap {
     position: relative;
+    min-height: 450px;
+  }
+  .grid__worker {
+    position: relative;
+    min-height: 250px;
+  }
+  .grid__template {
+    position: relative;
+    min-height: 380px;
+  }
+  .grid__devicePopup {
+    position: relative;
     min-height: 400px;
   }
   .order--grid__wrap {
@@ -198,6 +210,12 @@
           }
         }
 
+        &.tp-choose {
+          td {
+            background-color: $gray-90;
+          }
+        }
+
         &:hover {
           td {
             background-color: $gray-90;
@@ -292,7 +310,7 @@
   transition: $transition;
 
   &::placeholder {
-    color: $gray-60;
+    color: $gray-40;
   }
 
   &:focus {
@@ -309,12 +327,13 @@
   &:read-only {
     padding: 0;
     border-color: transparent;
-    background-color: transparent;
+    background-color: $white-100;
+    padding: 0 15px;
     color: $gray-90;
     cursor: default;
 
     &::placeholder {
-      color: $gray-60;
+      color: $gray-40;
     }
 
     &:focus {
@@ -327,7 +346,7 @@
       }
 
       &::placeholder {
-        color: $gray-60;
+        color: $gray-40;
       }
     }
   }
@@ -340,7 +359,7 @@
     cursor: not-allowed;
 
     &::placeholder {
-      color: $gray-60;
+      color: $gray-40;
     }
   }
 }
@@ -380,6 +399,67 @@
         height: 7px;
         border-radius: 50%;
         background-color: $white-100;
+      }
+    }
+
+    &:disabled {
+      border-color: $gray-60;
+      cursor: not-allowed;
+
+      & + label {
+        color: $gray-60;
+        cursor: not-allowed;
+      }
+
+      &:checked {
+        &:before {
+          background-color: $gray-40;
+        }
+      }
+    }
+  }
+
+  label {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+/* ==== Create Radio ==== */
+@mixin create_radio($size: 15px, $justify: flex-start) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  line-height: initial;
+  color: $blue-gray-100;
+
+  input[type="radio"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size;
+    height: $size;
+    border: 1px solid $blue-gray-100;
+    border-radius: 50%;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: $transition;
+
+    &:checked {
+      position: relative;
+      border-color: $blue-gray-100;
+
+      &:before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: $blue-gray-100;
       }
     }
 

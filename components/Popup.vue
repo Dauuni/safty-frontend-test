@@ -16,7 +16,7 @@
           class="btn icon icon__close--white"
           @click="$modal.hide(popupName)"
         >
-        <span class="hide">닫기</span>
+          <span class="hide">닫기</span>
         </button>
       </div>
       <!-- content -->
@@ -57,13 +57,11 @@
             @click="handleConfirm"
           >
             {{ okButtonText }}
-          </button>          
+          </button>
         </slot>
       </div>
     </div>
-
   </modal>
-  
 </template>
 
 <script>
@@ -76,17 +74,17 @@ export default {
     title: {
       type: [String],
       required: false,
-      default: '',
+      default: "",
     },
     width: {
       type: [String],
       required: false,
-      default: '1024',
+      default: "1024",
     },
     height: {
       type: [String],
       required: false,
-      default: '800',
+      default: "800",
     },
     draggable: {
       type: [Boolean, String],
@@ -116,54 +114,54 @@ export default {
     cancelButtonText: {
       type: [String],
       required: false,
-      default: '취소',
+      default: "취소",
     },
     deleteButtonText: {
       type: [String],
       required: false,
-      default: '삭제',
+      default: "삭제",
     },
     modifyButtonText: {
       type: [String],
       required: false,
-      default: '수정',
+      default: "수정",
     },
     okButtonText: {
       type: [String],
       required: false,
-      default: '확인',
-    }
+      default: "확인",
+    },
   },
   computed: {
     popupWidth() {
-      return this.width
+      return this.width;
     },
     popupHeight() {
-      return this.height
+      return this.height;
     },
   },
   methods: {
     handleClosed() {
-      this.$emit('closed')
+      this.$emit("closed");
     },
     handleCancel() {
-      this.hide()
-      this.$emit('cancel')
+      this.hide();
+      this.$emit("cancel");
     },
-    handleDelete() {
-      this.$emit('deleted')
+    handleDeleted() {
+      this.$emit("deleted");
     },
     handleModify() {
-      this.$emit('modify')
+      this.$emit("modify");
     },
     handleConfirm() {
-      this.$emit('confirm')
+      this.$emit("confirm");
     },
     hide() {
-      this.$modal.hide(this.popupName)
-    }
-  }
-}
+      this.$modal.hide(this.popupName);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -204,7 +202,6 @@ export default {
       border-color: transparent;
       font-size: 12px;
       padding: 8px 18px;
-      border-radius: 0.5rem;
     }
 
     .btn__cancel,
@@ -219,10 +216,11 @@ export default {
     .btn__ok {
       color: $white-100;
       background-color: $blue-gray-100;
+      border-color: $gray-50;
+      border-width: 1px;
 
       &:hover {
         opacity: 0.7;
-
       }
     }
   }

@@ -109,7 +109,29 @@
             font-size: 14px;
           }
         }
+        &__pagetitle {
+          @include body(font-md);
+          font-weight: 700;
+          color: $blue-gray-100;
+        }
       }
+
+      .content-template {
+        @apply flex-1;
+        width: 1138px;
+        margin: 0 auto;
+        padding: 40px 40px;
+
+        &__subtitle {
+          @include title(title-sm);
+          margin: 10px 0px;
+        }
+      }
+    }
+
+    /* ==== Search Form Sort ==== */
+    .search-form-sort {
+      @apply flex justify-between item-center;
     }
 
     /* ==== Search Form ==== */
@@ -174,6 +196,25 @@
           color: $gray-60;
         }
       }
+
+      &__checked {
+        position: relative;
+        width: 100%;
+        height: 74px;
+      }
+
+      &__checked-template {
+        position: relative;
+        min-width: 90px;
+        height: 52px;
+      }
+
+      &__pst {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        padding-bottom: 1rem;
+      }
     }
   }
 
@@ -181,6 +222,33 @@
   .btn {
     &:focus {
       outline: transparent;
+    }
+
+    &--template {
+      @include btn-size($height: 120px, $fontSize: 20px);
+      min-width: 100px;
+      margin-top: 52px;
+      font-weight: bold;
+      background-color: $blue-gray-100;
+      border-color: $gray-80;
+      border-radius: 1rem;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+
+    &--clear {
+      @include btn-size($height: 40px, $fontSize: 14px);
+      min-width: 100px;
+      font-weight: bold;
+      background-color: $white-100;
+      border-color: $gray-80;
+      border-radius: 1rem;
+      margin: 5px 0px;
+      color: red;
+      &:active {
+        opacity: 0.7;
+      }
     }
 
     &--lg {
@@ -213,15 +281,40 @@
     }
 
     &__create {
-      position: relative;
+      width: 25px;
 
       button {
-        position: absolute;
-        margin-left: 110px;
-
         &:disabled {
           color: $gray-40;
         }
+      }
+    }
+
+    &__minus {
+      width: 25px;
+
+      button {
+        color: $white-100;
+      }
+    }
+
+    &__reg {
+      padding: 7px 1px;
+      width: 50px;
+      height: 100%;
+      color: $white-100;
+      background-color: $blue-gray-100;
+      font-size: 12px;
+      border-radius: 0.5rem;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:disabled {
+        cursor: not-allowed;
+        background-color: $gray-60;
+        color: $gray-80;
       }
     }
   }
@@ -229,11 +322,11 @@
   /* ==== block ==== */
   .block {
     text-align: center;
+    height: 30px;
 
     &__code {
       background-color: $blue-gray-100;
       width: 300px;
-      height: 30px;
       margin: 0px 80px;
     }
 
@@ -243,6 +336,11 @@
       font-size: 18px;
       font-weight: bold;
       margin: 3px 0px;
+    }
+
+    &__worker {
+      background-color: $blue-gray-100;
+      width: 100%;
     }
   }
 }
@@ -254,7 +352,7 @@
 
   .vs__dropdown-toggle {
     padding: 0;
-    max-width: 100px;
+    max-width: 150px;
     height: 32px;
     border: 1px solid $gray-50;
     background-color: $white-100;
@@ -274,7 +372,9 @@
       }
       input {
         &::placeholder {
-          color: $gray-60;
+          color: $gray-40;
+          font-size: 14px;
+          padding-left: 6px;
         }
       }
       .vs__search {
@@ -380,6 +480,10 @@
           color: $gray-60;
           background-color: $gray-40;
           cursor: not-allowed;
+
+          &::placeholder {
+            color: $gray-60;
+          }
         }
       }
 
@@ -403,6 +507,17 @@
 /* ==== Grid ==== */
 .grid {
   @include grid();
+}
+.popup__grid {
+  width: 100%;
+  height: 160px;
+  overflow: auto;
+}
+
+.template__grid {
+  width: 100%;
+  height: 380px;
+  overflow: auto;
 }
 /* ====Grid 가로==== */
 .table {
@@ -432,6 +547,11 @@
         color: red;
       }
     }
+
+    &--all {
+      padding: 0px 5px;
+      color: $white-100;
+    }
   }
 
   &__input {
@@ -440,11 +560,60 @@
 
     &:disabled {
       background-color: $gray-40;
+
+      &::placeholder {
+        color: $gray-60;
+      }
     }
   }
 
   &__radio {
     @include body(font-sm);
     @include radio();
+  }
+
+  &__create__radio {
+    @include body(font-sm);
+    @include create_radio();
+  }
+
+  &__info {
+    @include body(font-sm);
+    @include label();
+    color: $blue-gray-100;
+    padding: 0px 10px;
+
+    &--required {
+      &::after {
+        content: "*";
+        padding-left: 5px;
+        color: red;
+      }
+    }
+  }
+}
+
+/* ==== Content 감싸는 흰색 배경 Box ==== */
+.cont-box {
+  border: 1px solid $gray-40;
+  padding: 40px 30px;
+  background-color: $white-100;
+}
+
+/* ==== Datepicker ==== */
+.mx-datepicker {
+  width: 250px;
+  .mx-input-wrapper {
+    .mx-input {
+      &:disabled {
+        background-color: $gray-40;
+        color: $gray-60;
+      }
+      &::placeholder {
+        color: $gray-40;
+        font-size: 14px;
+        padding-left: 6px;
+      }
+    }
   }
 }

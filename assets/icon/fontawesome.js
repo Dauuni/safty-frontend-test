@@ -7,7 +7,9 @@ const solid = [
   'faCode',
   'faPlus',
   'faCircle',
-  'faCircleRight'
+  'faCircleRight',
+  'faMobileScreenButton',
+  'faMinus'
 ]
 
 export { solid }

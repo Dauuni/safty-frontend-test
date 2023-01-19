@@ -25,8 +25,8 @@ export default {
     },
     framework: {
       name: 'smart-safty',
-      useMockup: true, // Mockup 기능 사용 여부
-      onlyUseMockup: true, // 배포 이후에도 Mockup 기능 사용 여부
+      useMockup: false, // Mockup 기능 사용 여부
+      onlyUseMockup: false, // 배포 이후에도 Mockup 기능 사용 여부
     }
   },
 
@@ -35,18 +35,22 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/vue-select',
-    '@/plugins/const',
-    '@/plugins/mock',
+    '@/plugins/axios.js',
+    '@/plugins/vue-select.js',
+    '@/plugins/const.js',
+    '@/plugins/mock.js',
     '@/plugins/vue-js-modal.js',
     { src: '@/plugins/tui-editor.js', ssr: false },
     { src: '@/plugins/dialog.js', ssr: false },
+    { src: '@/plugins/date-picker.js', ssr: false },
+    { src: '@/plugins/vueDaumPostcode.js', ssr: false },
+    { src: '@/plugins/chart.js', ssr: false },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // Modules for dev and build (recommended): https://go.nuxtjsz.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxt/typescript-build',
@@ -104,7 +108,7 @@ export default {
   // proxy url information
   proxy: {
     '/safty/api': {
-     target: 'http://localhost:9090',
+     target: 'http://localhost:8888',
      changeOrigin: true,
     },
     // '/safty/api': {

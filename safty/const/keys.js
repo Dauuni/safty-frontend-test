@@ -1,5 +1,12 @@
 export default {
   common: {
-    all: 'all',
+    all: 'ALL',
+  },
+  mode: {
+    create: 'create',
+    read: 'read',
+    modify: 'modify',
+    joinDt: 'joinDt',
+    birthday: 'birthday'
   }
 }

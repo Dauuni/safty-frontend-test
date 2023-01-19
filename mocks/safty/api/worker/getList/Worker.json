@@ -1,0 +1,42 @@
+{
+  "status": 200,
+  "code": "20000000",
+  "desc": "정상 처리 되었습니다.",
+  "data": {
+    "totalCount": 2,
+    "dataList": [
+      {
+        "idx": 1,
+        "workerNm": "홍길동",
+        "gender": "MAN",
+        "mobile": "010-1234-5678",
+        "birthday": "1999-01-01",
+        "address": "서울특별시 구로구 디지털로31길 20 에이스테크노5차 1002호",
+        "aCd": "WORKER",
+        "bCd": "NORMAL",
+        "cCd": "EMPLOYEE",
+        "cdNm": "사원",
+        "crteDt": "2022-12-28",
+        "foreigner": "N",
+        "macAddr": "00-1A-2B-3C-4D-5F",
+        "gtwYn": "Y"
+      },
+      {
+        "idx": 2,
+        "workerNm": "홍길순",
+        "gender": "WOMAN",
+        "mobile": "010-1234-5678",
+        "birthday": "2000-01-01",
+        "address": "서울특별시 구로구 디지털로31길 20 에이스테크노5차 1002호",
+        "aCd": "WORKER",
+        "bCd": "ADMIN",
+        "cCd": "ADMIN",
+        "cdNm": "일반 관리자",
+        "crteDt": "2022-12-28",
+        "foreigner": "N",
+        "macAddr": "00-1A-2B-3C-4D-6F",
+        "gtwYn": "N"
+      }
+    ]
+  }
+}
